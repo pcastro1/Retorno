@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Schools</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rbd</th>
+      <th>Nombre ee</th>
+      <th>Region nom</th>
+      <th>Comuna nom</th>
+      <th>Dependencia</th>
+      <th>Tipo ee</th>
+      <th>Estado apertura</th>
+      <th>Fecha solicitud</th>
+      <th>Fecha inicio</th>
+      <th>Asistencia</th>
+      <th>Modo ingreso</th>
+      <th>Comentarios</th>
+      <th>Ok sostenedor</th>
+      <th>Propuesta retorno</th>
+      <th>Oficio salud</th>
+      <th>Respuesta salud</th>
+      <th>Ok salud</th>
+      <th>Rex</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schools.each do |school| %>
+      <tr>
+        <td><%= school.rbd %></td>
+        <td><%= school.nombre_ee %></td>
+        <td><%= school.region_nom %></td>
+        <td><%= school.comuna_nom %></td>
+        <td><%= school.dependencia %></td>
+        <td><%= school.tipo_ee %></td>
+        <td><%= school.estado_apertura %></td>
+        <td><%= school.fecha_solicitud %></td>
+        <td><%= school.fecha_inicio %></td>
+        <td><%= school.asistencia %></td>
+        <td><%= school.modo_ingreso %></td>
+        <td><%= school.comentarios %></td>
+        <td><%= school.ok_sostenedor %></td>
+        <td><%= school.propuesta_retorno %></td>
+        <td><%= school.oficio_salud %></td>
+        <td><%= school.respuesta_salud %></td>
+        <td><%= school.ok_salud %></td>
+        <td><%= school.rex %></td>
+        <td><%= link_to 'Show', school %></td>
+        <td><%= link_to 'Edit', edit_school_path(school) %></td>
+        <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New School', new_school_path %>

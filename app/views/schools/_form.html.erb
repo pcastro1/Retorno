@@ -1,0 +1,107 @@
+<%= form_with(model: school, local: true) do |form| %>
+  <% if school.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(school.errors.count, "error") %> prohibited this school from being saved:</h2>
+
+      <ul>
+        <% school.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :rbd %>
+    <%= form.number_field :rbd %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nombre_ee %>
+    <%= form.text_field :nombre_ee %>
+  </div>
+
+  <div class="field">
+    <%= form.label :region_nom %>
+    <%= form.text_field :region_nom %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comuna_nom %>
+    <%= form.text_field :comuna_nom %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dependencia %>
+    <%= form.text_field :dependencia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipo_ee %>
+    <%= form.text_field :tipo_ee %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estado_apertura %>
+    <%= form.text_field :estado_apertura %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_solicitud %>
+    <%= form.date_select :fecha_solicitud %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_inicio %>
+    <%= form.date_select :fecha_inicio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :asistencia %>
+    <%= form.number_field :asistencia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modo_ingreso %>
+    <%= form.text_field :modo_ingreso %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comentarios %>
+    <%= form.text_area :comentarios %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ok_sostenedor %>
+    <%= form.text_field :ok_sostenedor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :propuesta_retorno %>
+    <%= form.text_field :propuesta_retorno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :oficio_salud %>
+    <%= form.text_field :oficio_salud %>
+  </div>
+
+  <div class="field">
+    <%= form.label :respuesta_salud %>
+    <%= form.text_field :respuesta_salud %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ok_salud %>
+    <%= form.text_field :ok_salud %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rex %>
+    <%= form.text_field :rex %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

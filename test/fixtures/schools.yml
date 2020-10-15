@@ -1,0 +1,41 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rbd: 1
+  nombre_ee: MyString
+  region_nom: MyString
+  comuna_nom: MyString
+  dependencia: MyString
+  tipo_ee: MyString
+  estado_apertura: MyString
+  fecha_solicitud: 2020-10-14
+  fecha_inicio: 2020-10-14
+  asistencia: 1
+  modo_ingreso: MyString
+  comentarios: MyText
+  ok_sostenedor: MyString
+  propuesta_retorno: MyString
+  oficio_salud: MyString
+  respuesta_salud: MyString
+  ok_salud: MyString
+  rex: MyString
+
+two:
+  rbd: 1
+  nombre_ee: MyString
+  region_nom: MyString
+  comuna_nom: MyString
+  dependencia: MyString
+  tipo_ee: MyString
+  estado_apertura: MyString
+  fecha_solicitud: 2020-10-14
+  fecha_inicio: 2020-10-14
+  asistencia: 1
+  modo_ingreso: MyString
+  comentarios: MyText
+  ok_sostenedor: MyString
+  propuesta_retorno: MyString
+  oficio_salud: MyString
+  respuesta_salud: MyString
+  ok_salud: MyString
+  rex: MyString
