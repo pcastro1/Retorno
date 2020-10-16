@@ -8,6 +8,7 @@ class Search < ApplicationRecord
     schools = schools.where(["rbd = ?",rbd]) if rbd.present?
     schools = schools.where(["region_nom LIKE ?",region]) if region.present?
     schools = schools.where(["estado_apertura LIKE ?",estado]) if estado.present?
+    schools = schools.where(["comuna_nom LIKE ?",comuna]) if comuna.present?
 
     return schools
     end

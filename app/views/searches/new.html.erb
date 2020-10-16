@@ -17,6 +17,11 @@
   <%= form.label :region %>
   <%= form.select :region, ['Arica y Parinacota', 'Tarapaca', 'Antofagasta', 'Atacama','Coquimbo', 'Valparaiso', 'Metropolitana', 'OHiggins', 'Maule', 'Nuble', 'Biobio', 'La Araucania', 'Los Rios', 'Los Lagos', 'Aysen', 'Magallanes'], :include_blank => true %>
 </div>
+
+<div class="field">
+<%= form.label :comuna %>
+<%= form.select :comuna, options_for_select(School.all.order("comuna_nom ASC").map {|t| [ t.comuna_nom]}.uniq), :include_blank => true%>
+</div>
    
 
     <div class="field">

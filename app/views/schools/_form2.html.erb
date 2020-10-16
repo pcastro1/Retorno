@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :rbd %>
-    <%= form.number_field :rbd %>
+    <%= form.number_field :rbd, :value => School.all.order("rbd ASC").last.rbd + 1 %>
   </div>
 
   <div class="field">
@@ -23,17 +23,17 @@
 
   <div class="field">
     <%= form.label :region_nom %>
-    <%= form.select :region, ['Arica y Parinacota', 'Tarapaca', 'Antofagasta', 'Atacama','Coquimbo', 'Valparaiso', 'Metropolitana', 'OHiggins', 'Maule', 'Nuble', 'Biobio', 'La Araucania', 'Los Rios', 'Los Lagos', 'Aysen', 'Magallanes']%>
+    <%= form.select :region_nom, ['Arica y Parinacota', 'Tarapaca', 'Antofagasta', 'Atacama','Coquimbo', 'Valparaiso', 'Metropolitana', 'OHiggins', 'Maule', 'Nuble', 'Biobio', 'La Araucania', 'Los Rios', 'Los Lagos', 'Aysen', 'Magallanes'] %>
   </div>
 
   <div class="field">
     <%= form.label :comuna_nom %>
-    <%= form.text_field :comuna_nom %>
+    <%= form.select :comuna_nom, options_for_select(School.all.order("comuna_nom ASC").map {|t| [ t.comuna_nom]}.uniq) %>
   </div>
 
   <div class="field">
     <%= form.label :dependencia %>
-    <%= form.text_field :dependencia %>
+    <%= form.select :dependencia, options_for_select(School.all.order("dependencia ASC").map {|t| [ t.dependencia]}.uniq) %>
   </div>
 
   <div class="field">
