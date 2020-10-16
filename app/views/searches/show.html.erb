@@ -1,12 +1,6 @@
-<p id="notice"><%= notice %></p>
+<h1>Resultado busqueda</h1>
 
-<h1>Colegios</h1>
 
-<%= form_tag schools_path, :method => 'get' do %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Buscar" %>
-  <% end %>
-  <%= link_to "Búsqueda avanzada", new_search_path %>
 
   <style>
   table {
@@ -50,7 +44,7 @@
 
 
   <tbody>
-    <%  @schools.each do |school| %>
+    <%  @search.search_schools.each do |school| %>
       <tr>
         <td><%= school.rbd %></td>
         <td><%= link_to school.nombre_ee, edit_school_path(school) %></td>
@@ -80,6 +74,4 @@
 
 <br>
 
-<%#
-
-<%= link_to 'New School', new_school_path %>
+<%= link_to 'Atrás', new_search_path %>

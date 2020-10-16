@@ -11,44 +11,44 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :rbd %>
-    <%= form.number_field :rbd %>
-  </div>
+  <p>
+  <strong>RBD:</strong>
+  <%= @school.rbd %>
+</p>
 
-  <div class="field">
-    <%= form.label :nombre_ee %>
-    <%= form.text_field :nombre_ee %>
-  </div>
+<p>
+  <strong>Nombre:</strong>
+  <%= @school.nombre_ee %>
+</p>
 
-  <div class="field">
-    <%= form.label :region_nom %>
-    <%= form.text_field :region_nom %>
-  </div>
+<p>
+  <strong>Region:</strong>
+  <%= @school.region_nom %>
+</p>
 
-  <div class="field">
-    <%= form.label :comuna_nom %>
-    <%= form.text_field :comuna_nom %>
-  </div>
+<p>
+  <strong>Comuna:</strong>
+  <%= @school.comuna_nom %>
+</p>
 
-  <div class="field">
-    <%= form.label :dependencia %>
-    <%= form.text_field :dependencia %>
-  </div>
+<p>
+  <strong>Dependencia:</strong>
+  <%= @school.dependencia %>
+</p>
 
-  <div class="field">
-    <%= form.label :tipo_ee %>
-    <%= form.text_field :tipo_ee %>
-  </div>
+<p>
+  <strong>Tipo:</strong>
+  <%= @school.tipo_ee %>
+</p>
 
   <div class="field">
     <%= form.label :estado_apertura %>
-    <%= form.text_field :estado_apertura %>
+    <%= form.select :estado_apertura, ['Abierto', 'Suspendido', 'En proceso', 'Con intención de abrir','Nula disposición a abrir'], :include_blank => true %>
   </div>
 
   <div class="field">
     <%= form.label :fecha_solicitud %>
-    <%= form.date_select :fecha_solicitud %>
+    <%= form.date_select :fecha_solicitud, :required => true %>
   </div>
 
   <div class="field">
@@ -63,45 +63,49 @@
 
   <div class="field">
     <%= form.label :modo_ingreso %>
-    <%= form.text_field :modo_ingreso %>
+    <%= form.select :modo_ingreso, ['Completo', '4 Medio', 'Media', '7 y 8 Basico','1 a 6 Basico','Basica','Parvularia','Por turnos'], :include_blank => true %>
   </div>
 
-  <div class="field">
-    <%= form.label :comentarios %>
-    <%= form.text_area :comentarios %>
-  </div>
 
   <div class="field">
     <%= form.label :ok_sostenedor %>
-    <%= form.text_field :ok_sostenedor %>
+    <%= form.select :ok_sostenedor, ['Si', 'No'], :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :propuesta_retorno %>
-    <%= form.text_field :propuesta_retorno %>
+    <%= form.select :propuesta_retorno, ['Si', 'No'], :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :oficio_salud %>
-    <%= form.text_field :oficio_salud %>
+    <%= form.select :oficio_salud, ['Si', 'No'], :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :respuesta_salud %>
-    <%= form.text_field :respuesta_salud %>
+    <%= form.select :respuesta_salud, ['Si', 'No'], :required => true %>
+    
   </div>
 
   <div class="field">
     <%= form.label :ok_salud %>
-    <%= form.text_field :ok_salud %>
+    <%= form.select :ok_salud, ['Si', 'No'], :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :rex %>
-    <%= form.text_field :rex %>
+    <%= form.select :rex, ['Si', 'No'], :required => true %>
   </div>
 
+  <div class="field">
+<%= form.label :comentarios %>
+<%= form.text_area :comentarios %>
+</div>
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Actualizar" %>
   </div>
 <% end %>
+
+

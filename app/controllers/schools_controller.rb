@@ -4,7 +4,11 @@ class SchoolsController < ApplicationController
   # GET /schools
   # GET /schools.json
   def index
-    @schools = School.where(["nombre_ee LIKE ?","%#{params[:search]}%"])
+    if params[:search]
+    @schools = School.search (params[:search])
+    else
+    @schools = School.search ("buscar")
+    end
   end
 
   # GET /schools/1

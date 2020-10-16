@@ -1,0 +1,34 @@
+
+<h1> Busque su establecimiento </h1>
+<%= form_for @search  do |form| %>
+
+  
+    <div class="field">
+      <%= form.label :RBD %>
+      <%= form.number_field :rbd %>
+    </div>
+
+    <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre %>
+  </div>
+
+  <div class="field">
+  <%= form.label :region %>
+  <%= form.select :region, ['Arica y Parinacota', 'Tarapaca', 'Antofagasta', 'Atacama','Coquimbo', 'Valparaiso', 'Metropolitana', 'OHiggins', 'Maule', 'Nuble', 'Biobio', 'La Araucania', 'Los Rios', 'Los Lagos', 'Aysen', 'Magallanes'], :include_blank => true %>
+</div>
+   
+
+    <div class="field">
+    <%= form.label :estado %>
+    <%= form.select :estado, ['Abierto', 'Suspendido', 'En proceso', 'Con intención de abrir','Nula disposición a abrir'], :include_blank => true %>
+  </div>
+  
+    
+    <div class="actions">
+      <%= form.submit "Buscar" %>
+    </div>
+  <% end %>
+
+  <%= link_to 'Atrás', schools_path %>
+  

@@ -84,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: retorno_voluntario_development
-  username: postgres
-  password: password
+  database: retorno_voluntario_production
+  username: retorno_voluntario
+  password: <%= ENV['RETORNO_VOLUNTARIO_DATABASE_PASSWORD'] %>
