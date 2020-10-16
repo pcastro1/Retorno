@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :region_nom %>
-    <%= form.text_field :region_nom %>
+    <%= form.select :region, ['Arica y Parinacota', 'Tarapaca', 'Antofagasta', 'Atacama','Coquimbo', 'Valparaiso', 'Metropolitana', 'OHiggins', 'Maule', 'Nuble', 'Biobio', 'La Araucania', 'Los Rios', 'Los Lagos', 'Aysen', 'Magallanes']%>
   </div>
 
   <div class="field">
@@ -38,68 +38,70 @@
 
   <div class="field">
     <%= form.label :tipo_ee %>
-    <%= form.text_field :tipo_ee %>
+    <%= form.select :tipo_ee, ['EE', 'EP'] %>
   </div>
 
   <div class="field">
-    <%= form.label :estado_apertura %>
-    <%= form.text_field :estado_apertura %>
-  </div>
+  <%= form.label :estado_apertura %>
+  <%= form.select :estado_apertura, ['Abierto', 'Suspendido', 'En proceso', 'Con intención de abrir','Nula disposición a abrir'], :include_blank => true %>
+</div>
 
-  <div class="field">
-    <%= form.label :fecha_solicitud %>
-    <%= form.date_select :fecha_solicitud %>
-  </div>
+<div class="field">
+  <%= form.label :fecha_solicitud %>
+  <%= form.date_select :fecha_solicitud, :required => true %>
+</div>
 
-  <div class="field">
-    <%= form.label :fecha_inicio %>
-    <%= form.date_select :fecha_inicio %>
-  </div>
+<div class="field">
+  <%= form.label :fecha_inicio %>
+  <%= form.date_select :fecha_inicio, :include_blank => true %>
+</div>
 
-  <div class="field">
-    <%= form.label :asistencia %>
-    <%= form.number_field :asistencia %>
-  </div>
+<div class="field">
+  <%= form.label :asistencia %>
+  <%= form.number_field :asistencia %>
+</div>
 
-  <div class="field">
-    <%= form.label :modo_ingreso %>
-    <%= form.text_field :modo_ingreso %>
-  </div>
+<div class="field">
+  <%= form.label :modo_ingreso %>
+  <%= form.select :modo_ingreso, ['Completo', '4 Medio', 'Media', '7 y 8 Basico','1 a 6 Basico','Basica','Parvularia','Por turnos'], :include_blank => true %>
+</div>
 
-  <div class="field">
-    <%= form.label :comentarios %>
-    <%= form.text_area :comentarios %>
-  </div>
 
-  <div class="field">
-    <%= form.label :ok_sostenedor %>
-    <%= form.text_field :ok_sostenedor %>
-  </div>
+<div class="field">
+  <%= form.label :ok_sostenedor %>
+  <%= form.select :ok_sostenedor, ['Si', 'No'], :required => true %>
+</div>
 
-  <div class="field">
-    <%= form.label :propuesta_retorno %>
-    <%= form.text_field :propuesta_retorno %>
-  </div>
+<div class="field">
+  <%= form.label :propuesta_retorno %>
+  <%= form.select :propuesta_retorno, ['Si', 'No'], :required => true %>
+</div>
 
-  <div class="field">
-    <%= form.label :oficio_salud %>
-    <%= form.text_field :oficio_salud %>
-  </div>
+<div class="field">
+  <%= form.label :oficio_salud %>
+  <%= form.select :oficio_salud, ['Si', 'No'], :required => true %>
+</div>
 
-  <div class="field">
-    <%= form.label :respuesta_salud %>
-    <%= form.text_field :respuesta_salud %>
-  </div>
+<div class="field">
+  <%= form.label :respuesta_salud %>
+  <%= form.select :respuesta_salud, ['Si', 'No'], :required => true %>
+  
+</div>
 
-  <div class="field">
-    <%= form.label :ok_salud %>
-    <%= form.text_field :ok_salud %>
-  </div>
+<div class="field">
+  <%= form.label :ok_salud %>
+  <%= form.select :ok_salud, ['Si', 'No'], :required => true %>
+</div>
 
-  <div class="field">
-    <%= form.label :rex %>
-    <%= form.text_field :rex %>
-  </div>
+<div class="field">
+  <%= form.label :rex %>
+  <%= form.select :rex, ['Si', 'No'], :required => true %>
+</div>
+
+<div class="field">
+<%= form.label :comentarios %>
+<%= form.text_area :comentarios %>
+</div>
 
   <div class="actions">
     <%= form.submit %>
