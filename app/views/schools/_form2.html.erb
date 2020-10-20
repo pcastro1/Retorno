@@ -13,32 +13,32 @@
 
   <div class="field">
     <%= form.label :rbd %>
-    <%= form.number_field :rbd, :value => School.all.order("rbd ASC").last.rbd + 1 %>
+    <%= form.number_field :rbd, :value => School.all.order("rbd ASC").last.rbd + 1, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :nombre_ee %>
-    <%= form.text_field :nombre_ee %>
+    <%= form.text_field :nombre_ee, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :region_nom %>
-    <%= form.select :region_nom, ['Arica y Parinacota', 'Tarapaca', 'Antofagasta', 'Atacama','Coquimbo', 'Valparaiso', 'Metropolitana', 'OHiggins', 'Maule', 'Nuble', 'Biobio', 'La Araucania', 'Los Rios', 'Los Lagos', 'Aysen', 'Magallanes'] %>
+    <%= form.select :region_nom, ['Arica y Parinacota', 'Tarapaca', 'Antofagasta', 'Atacama','Coquimbo', 'Valparaiso', 'Metropolitana', 'OHiggins', 'Maule', 'Nuble', 'Biobio', 'La Araucania', 'Los Rios', 'Los Lagos', 'Aysen', 'Magallanes'], :prompt => true, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :comuna_nom %>
-    <%= form.select :comuna_nom, options_for_select(School.all.order("comuna_nom ASC").map {|t| [ t.comuna_nom]}.uniq) %>
+    <%= form.select :comuna_nom, options_for_select(School.all.order("comuna_nom ASC").map {|t| [ t.comuna_nom]}.uniq), :prompt => true, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :dependencia %>
-    <%= form.select :dependencia, options_for_select(School.all.order("dependencia ASC").map {|t| [ t.dependencia]}.uniq) %>
+    <%= form.select :dependencia, options_for_select(School.all.order("dependencia ASC").map {|t| [ t.dependencia]}.uniq), :prompt => true, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :tipo_ee %>
-    <%= form.select :tipo_ee, ['EE', 'EP'] %>
+    <%= form.select :tipo_ee, ['EE', 'EP'], :prompt => true, :required => true %>
   </div>
 
   <div class="field">
@@ -69,33 +69,33 @@
 
 <div class="field">
   <%= form.label :ok_sostenedor %>
-  <%= form.select :ok_sostenedor, ['Si', 'No'], :required => true %>
+  <%= form.select :ok_sostenedor, ['Si', 'No'], :required => true, :selected => 'No' %>
 </div>
 
 <div class="field">
   <%= form.label :propuesta_retorno %>
-  <%= form.select :propuesta_retorno, ['Si', 'No'], :required => true %>
+  <%= form.select :propuesta_retorno, ['Si', 'No'], :required => true, :selected => 'No' %>
 </div>
 
 <div class="field">
   <%= form.label :oficio_salud %>
-  <%= form.select :oficio_salud, ['Si', 'No'], :required => true %>
+  <%= form.select :oficio_salud, ['Si', 'No'], :required => true, :selected => 'No' %>
 </div>
 
 <div class="field">
   <%= form.label :respuesta_salud %>
-  <%= form.select :respuesta_salud, ['Si', 'No'], :required => true %>
+  <%= form.select :respuesta_salud, ['Si', 'No'], :required => true, :selected => 'No' %>
   
 </div>
 
 <div class="field">
   <%= form.label :ok_salud %>
-  <%= form.select :ok_salud, ['Si', 'No'], :required => true %>
+  <%= form.select :ok_salud, ['Si', 'No'], :required => true, :selected => 'No' %>
 </div>
 
 <div class="field">
   <%= form.label :rex %>
-  <%= form.select :rex, ['Si', 'No'], :required => true %>
+  <%= form.select :rex, ['Si', 'No'], :required => true, :selected => 'No' %>
 </div>
 
 <div class="field">
