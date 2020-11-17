@@ -7,8 +7,15 @@ class SchoolsController < ApplicationController
     if params[:search]
     @schools = School.search (params[:search])
     else
-    @schools = School.search ("buscar")
+    @schools = School.all
     end
+
+    respond_to do |format|
+      format.html
+      format.csv{send_data @schools.to_csv}
+
+    end
+
   end
 
   # GET /schools/1
